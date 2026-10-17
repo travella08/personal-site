@@ -21,6 +21,7 @@
       --muted: #B8C5C8;
       --line: #34434B;
       --green: #A8C2B4;
+      --heading: #A8C2B4;
       --green-strong: #4C6A4A;
       --green-pale: #283D43;
       --surface: #18232C;
@@ -46,6 +47,7 @@
       --muted: #5D625C;
       --line: #D4D6D0;
       --green: #4C6A4A;
+      --heading: #304A35;
       --green-strong: #4C6A4A;
       --green-pale: #CEDCD8;
       --surface: #FBF9F5;
@@ -95,7 +97,7 @@
     .hero-visual .grid-line { stroke: var(--line); stroke-width: 1; }
     .hero-visual .curve { fill: none; stroke: var(--green); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
     .hero-visual .node { fill: var(--paper); stroke: var(--green); stroke-width: 3; }
-    .eyebrow, .section-kicker { margin: 0 0 12px; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: lowercase; }
+    .eyebrow { margin: 0 0 12px; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: lowercase; }
     h1, h2, h3, p { margin-top: 0; }
     h1 { max-width: 680px; margin-bottom: 12px; font-size: 28px; line-height: 1.2; letter-spacing: 0; }
     .hero-copy { max-width: 690px; margin: 0 0 18px; color: var(--muted); font-size: 16px; }
@@ -110,7 +112,7 @@
     .band { border-top: 1px solid var(--line); }
     .section { padding-block: 42px; }
     .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 22px; }
-    .section-heading h2 { margin-bottom: 0; font-size: 23px; line-height: 1.3; letter-spacing: 0; }
+    .section-heading h2 { color: var(--heading); margin-bottom: 0; font-size: 28px; line-height: 1.3; letter-spacing: 0; }
     .section-intro { max-width: 460px; margin-bottom: 0; color: var(--muted); font-size: 14px; }
     .about-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
     .about-copy { max-width: 570px; color: var(--muted); }
@@ -178,6 +180,7 @@
     .timeline-main { margin-left: 96px; }
     .timeline-main ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
     .timeline-main li + li { margin-top: 6px; }
+    .accomplishments-label { font-weight: 600; }
 
     .project-list { display: grid; grid-template-columns: 1fr; gap: 0; }
     .project { min-height: 0; padding: 17px 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; }
@@ -191,7 +194,7 @@
 
     .contact-band { background: transparent; border-top: 1px solid var(--line); }
     .contact-row { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-    .contact-row h2 { margin-bottom: 8px; font-size: 23px; }
+    .contact-row h2 { color: var(--heading); margin-bottom: 8px; font-size: 28px; line-height: 1.3; }
     .contact-row p { margin-bottom: 0; color: var(--muted); }
     .contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
     .contact-links a { padding: 0; border: 0; border-radius: 0; background: transparent; font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
@@ -263,8 +266,8 @@
           </svg>
         </div>
         <div>
-          <h1>Mathematics and Computer Science student at UIUC.</h1>
-          <p class="hero-copy">I work on solar-car race strategy and wildfire forecasting.</p>
+          <h1>Hi, I’m Tanav</h1>
+          <p class="hero-copy">I’m studying Mathematics and Computer Science at the University of Illinois Urbana-Champaign. I’m interested in using math and code to understand complex problems and build useful software.</p>
           <div class="hero-meta">
             <span>Champaign, Illinois</span>
           </div>
@@ -280,11 +283,11 @@
 
     <section class="band" id="about">
       <div class="section shell">
-        <div class="section-heading"><div><p class="section-kicker">about</p><h2>About me</h2></div></div>
+        <div class="section-heading"><div><h2>about me</h2></div></div>
         <div class="about-grid">
           <div class="about-copy">
-            <p>I’m pursuing a B.S. in Mathematics and Computer Science at the University of Illinois Urbana-Champaign. My recent work includes solar-car energy modeling and research on how tattoo inks affect cancer imaging.</p>
-            <p>I’ve also led the Stevenson High School Math Team and worked with research mentors and engineering teams.</p>
+            <p>I’m drawn to the mix of creativity and logic in math and computer science. I enjoy finding patterns, exploring different approaches, and working toward a solution that makes a complicated idea feel simple.</p>
+            <p>I like learning by building and working through challenging questions with other people. Whether I’m writing code or tackling a math problem, I enjoy understanding why something works and finding ways to make it better.</p>
           </div>
         </div>
       </div>
@@ -293,7 +296,7 @@
     <section class="band skills-band" id="skills">
       <div class="section shell">
         <div class="section-heading">
-          <div><p class="section-kicker">skills</p><h2>Skills</h2></div>
+          <div><h2>skills</h2></div>
         </div>
         <div class="skill-grid" aria-label="Technical skills">
           <div class="skill-tile" tabindex="0"><span class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=""></span><span class="skill-name">Python</span></div>
@@ -313,11 +316,20 @@
     <section class="band" id="experience">
       <div class="section shell">
         <div class="section-heading">
-          <div><p class="section-kicker">work experience</p><h2>Experience</h2></div>
+          <div><h2>experience</h2></div>
         </div>
         <div class="timeline">
           <details class="timeline-item" open>
-            <summary class="timeline-summary"><span class="experience-logo uchicago"><img src="https://bpb-us-w2.wpmucdn.com/voices.uchicago.edu/dist/9/4361/files/2023/09/UChicago_Seal_1Color_Maroon_RGB.png" alt="University of Chicago seal" loading="lazy"></span><span><h3>Research Intern</h3><span class="timeline-org">University of Chicago · SPARK Program</span></span><span class="timeline-date">Summer 2025</span></summary>
+            <summary class="timeline-summary"><span class="experience-logo"><img src="assets/skills/illini-solar-car.svg" alt="Illini Solar Car logo" loading="lazy"></span><span><h3>Strategy and Telemetry</h3><span class="timeline-org">Illini Solar Car</span></span><span class="timeline-date">Aug 2026–Present</span></summary>
+            <div class="timeline-main">
+              <ul>
+                <li>Developing a coulomb-counting battery state-of-charge (SOC) model on the Strategy and Modeling subteam to improve the efficiency and accuracy of SOC estimates.</li>
+                <li>Supporting race-strategy preparation for the World Solar Challenge and American Solar Challenge.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="timeline-item" open>
+            <summary class="timeline-summary"><span class="experience-logo uchicago"><img src="https://bpb-us-w2.wpmucdn.com/voices.uchicago.edu/dist/9/4361/files/2023/09/UChicago_Seal_1Color_Maroon_RGB.png" alt="University of Chicago seal" loading="lazy"></span><span><h3>Research Intern</h3><span class="timeline-org">University of Chicago</span></span><span class="timeline-date">Summer 2025</span></summary>
             <div class="timeline-main">
               <ul>
                 <li>Analyzed how pigment composition across roughly 30 tattoo inks can distort cancer radiology imaging.</li>
@@ -329,8 +341,35 @@
             <summary class="timeline-summary"><span class="experience-logo"><img class="stevenson-mark" src="assets/skills/stevenson-patriot.svg" alt="Stevenson Patriots logo" loading="lazy"></span><span><h3>Math Team Captain</h3><span class="timeline-org">Stevenson High School</span></span><span class="timeline-date">2024–2026</span></summary>
             <div class="timeline-main">
               <ul>
-                <li>Led a 100+ member team to first- or second-place finishes at state and regional contests each year from 2023–2026.</li>
-                <li>Ran weekly sessions in algorithmic problem-solving and discrete math; built a shared library of step-by-step review solutions.</li>
+                <li>Helped secure first- or second-place finishes at state and regional contests each year from 2023–2026 by leading a 100+ member math team.</li>
+                <li>Prepared fellow team members for national, state, and regional competitions through regular, engaging, and collaborative sessions covering three subjects: number theory, combinatorics, and probability.</li>
+                <li>Engaged hundreds of young community members in math by teaching and volunteering through the Stevenson Consortium Contest, Math Carnival, and Math Circle.</li>
+                <li><span class="accomplishments-label">Honors</span>
+                  <ul>
+                    <li>4x American Invitational Mathematics Examination (AIME) qualifier.</li>
+                    <li>Scored in the top 2.5% on the AMC 10.</li>
+                    <li>Placed 1st out of 256 contestants individually at State in 2024.</li>
+                    <li>3x North Suburban Math League season High Scorer.</li>
+                    <li>The Actuarial Foundation’s Modeling the Future Challenge — Semifinalist, 2025 and 2026.</li>
+                    <li>MathWorks Math Modeling Challenge — Honorable Mention ($1,000 team scholarship award).</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details class="timeline-item" open>
+            <summary class="timeline-summary"><span class="experience-logo"><img class="stevenson-mark" src="assets/skills/stevenson-school.svg" alt="Stevenson High School logo" loading="lazy"></span><span><h3>Physics Club Executive</h3><span class="timeline-org">Stevenson High School</span></span><span class="timeline-date">2025–2026</span></summary>
+            <div class="timeline-main">
+              <ul>
+                <li>Prepared club members for the F=ma exam and USAPhO by developing problem sets and engaging, relevant lessons that also explored physics topics beyond competition preparation.</li>
+                <li><span class="accomplishments-label">Honors</span>
+                  <ul>
+                    <li>USAPhO Honorable Mention (top 300 among F=ma exam qualifiers).</li>
+                    <li>Scored 19/25 on the 2026 F=ma qualifying exam.</li>
+                    <li>2025 AAPT PhysicsBowl (2nd place in Midwest; 34/40).</li>
+                    <li>Ranked 4th among high school teams in Physics Brawl with my team.</li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </details>
@@ -341,7 +380,7 @@
     <section class="band" id="projects">
       <div class="section shell">
         <div class="section-heading">
-          <div><p class="section-kicker">projects</p><h2>Projects</h2></div>
+          <div><h2>projects</h2></div>
         </div>
         <div class="project-list">
           <article class="project">
@@ -362,7 +401,7 @@
 
     <section class="contact-band" id="contact">
       <div class="section shell contact-row">
-        <div><p class="section-kicker">contact</p><h2>Contact</h2><p><a href="mailto:tanavr2@illinois.edu">tanavr2@illinois.edu</a></p></div>
+        <div><h2>contact</h2><p><a href="mailto:tanavr2@illinois.edu">tanavr2@illinois.edu</a></p></div>
       </div>
     </section>
   </main>
