@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101820">
+  <title>Writing | Tanav Ravella</title>
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") || "dark";
+    } catch {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
+  <style>
+    :root { color-scheme: dark; --paper: #101820; --ink: #F5F2EC; --muted: #B8C5C8; --line: #34434B; --green: #A8C2B4; --notice: #18232C; }
+    :root[data-theme="light"] { color-scheme: light; --paper: #F5F2EC; --ink: #0F110F; --muted: #5D625C; --line: #D4D6D0; --green: #4C6A4A; --notice: #DDE7EA; }
+    * { box-sizing: border-box; }
+    body { max-width: 760px; margin: 0 auto; padding: 32px 24px 70px; background: var(--paper); color: var(--ink); font: 16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    header { padding: 15px 0 43px; }
+    .topline { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    a { color: var(--green); }
+    .back { font-size: 13px; font-weight: 650; text-decoration: none; }
+    .theme-toggle { width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 5px; background: transparent; color: var(--ink); cursor: pointer; }
+    .theme-toggle svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+    :root[data-theme="dark"] .theme-toggle .moon-icon, :root[data-theme="light"] .theme-toggle .sun-icon { display: none; }
+    .kicker { margin: 48px 0 10px; color: var(--green); font-size: 11px; font-weight: 750; letter-spacing: 1.3px; text-transform: uppercase; }
+    h1 { margin: 0 0 12px; font-size: 42px; line-height: 1.15; }
+    header p:last-child { max-width: 560px; margin: 0; color: var(--muted); }
+    article { padding: 23px 0; border-top: 1px solid var(--line); }
+    article h2 { margin: 0 0 7px; font-size: 20px; }
+    article p { margin: 0; color: var(--muted); font-size: 14px; }
+    .empty { margin-top: 14px; padding: 16px; border-left: 3px solid var(--green); background: var(--notice); color: var(--muted); font-size: 13px; }
+    @media (max-width: 480px) { body { padding-inline: 18px; } h1 { font-size: 36px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topline">
+      <a class="back" href="index.html">← Back to portfolio</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z"/></svg>
+      </button>
+    </div>
+    <p class="kicker">Notes & ideas</p>
+    <h1>Writing</h1>
+    <p>A place for project notes, things I’m learning, and ideas at the intersection of math and computing.</p>
+  </header>
+  <main>
+    <div class="empty">No posts yet. New writing will appear here.</div>
+  </main>
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    function setTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      themeMeta.content = theme === "dark" ? "#101820" : "#F5F2EC";
+      const nextTheme = theme === "dark" ? "light" : "dark";
+      themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+      themeToggle.title = `Switch to ${nextTheme} mode`;
+      try { localStorage.setItem("portfolio-theme", theme); } catch {}
+    }
+    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
+    themeToggle.addEventListener("click", () => {
+      setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>
